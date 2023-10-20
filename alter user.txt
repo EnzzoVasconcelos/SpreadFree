@@ -1,8 +1,8 @@
-ALTER USER 'root'@'localhost' 
+ALTER USER 'root'@'containers-us-west-141.railway.app' 
 IDENTIFIED 
 with 
 mysql_native_password 
-BY '@ITB123456';
+BY 'FZglkaXAxHmLgEFnVOsV';
 
 
 --------------------Coiso do Pesquisar---------------------------

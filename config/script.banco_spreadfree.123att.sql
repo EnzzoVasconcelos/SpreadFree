@@ -110,28 +110,3 @@ create table destaque (
     id_usuario int not null,
     foreign key (id_usuario) references usuario(id_usuario)
 );
-
-
-DROP TABLE IF EXISTS `pesquisa`;
-create table pesquisa(
-	id_pesquisa int primary key auto_increment not null,
-    user_name int not null,
-    foreign key (user_name) references comunidade(user_name)
-);
-
-select* from usuario;
-
-insert into usuario(user_name, email, senha, telefone, cidade, bairro, data_de_nasc, nome, foto_perfil, tipo_perfil) 
-values ('fernanda_02', 'spreadfree@gmail.com', 'Teste@123', '(11)93220-9457', 'barueri', 'paulista', '2000-04-10', 'fernanda', 'foto_perfil', '@Fernanda');
-
-insert into usuario(user_name, email, senha, telefone, cidade, bairro, data_de_nasc, nome, foto_perfil) 
-values ('julia_05', 'juliapeçanha@gmail.com', '101525', '(11)96550-0978', 'barueri', 'paulista', '2000-01-20', 'julia', 'foto_perfil');
-
-insert into usuario(user_name, email, senha, telefone, cidade, bairro, data_de_nasc, nome, foto_perfil) 
-values ('Ana_02', 'analuisa@gmail.com', '101530', '(11)96550-5090', 'barueri', 'paulista', '2000-07-28', 'ana', 'foto_perfil');
-
-insert into usuario(user_name, email, senha, telefone, cidade, bairro, data_de_nasc, nome, foto_perfil) 
-values ('enzzo_05', 'enzzovasconcelos@gmail.com', '101535', '(11)96550-4090', 'barueri', 'paulista', '2000-03-11', 'enzzo', 'foto_perfil');
-
-insert into usuario(user_name, email, senha, telefone, cidade, bairro, data_de_nasc, nome, foto_perfil) 
-values ('eduardo_02', 'eduardomatos@gmail.com', '101540', '(11)96550-0978', 'barueri', 'paulista', '2000-09-20', 'eduardo', 'foto_perfil');

@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 var session = require("express-session");
-const port = process.env.PORT || '5000';
+const port = process.env.PORT || '500';
 
 
 app.use(
@@ -25,5 +25,5 @@ var rotas = require("./app/routes/router");
 app.use("/", rotas);
 
 app.listen(port, () =>{
-    console.log(`Servidor ouvindo na porta 5000`);
+    console.log(`Servidor ouvindo na porta 500`);
 });

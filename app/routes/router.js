@@ -170,7 +170,7 @@ router.post("/cadastro",
 
   body("Nome").isLength({ max: 255 }),
   body("Email").isEmail(),
-  body("Telefone").isNumeric(),
+  body("Telefone").isLength(),
   body("nascimento").isDate(),
   body("Senha").isStrongPassword()
     .withMessage("A senha deve ter no mínimo 8 caracteres (mínimo 1 letra maiúscula, 1 caractere especial e 1 número)"),
