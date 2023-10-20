@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="/"><img src="img/Logotipo.png" alt="logo do site" class="logoHome"></a>  
+                
+        <button class="hamburguer">
+            <div class="bar">
+            </div>
+        </button>
+        
+        <nav class="mobile-nav">
+            
+            <a href="/perfil"><img src="img/icon_user_u27.svg" alt="foto de usuario"></a>
+            <h4>Entre ou cadastre sua conta</h4>
+            <a href="/login" class="entrar">Entrar</a>
+            <a href="/cadastro" class="cadastrar">Cadastrar</a>
+            <a href="/" class="itemMenu"> Início </a>
+            <a href="/premium" class="itemMenu"> Premium </a>
+            <a href="/Comunidade" class="itemMenu"> Comunidade </a>
+            <a href="/discovery" class="itemMenu"> Descobrir </a>
+            <a href="/ajuda" class="itemMenu"> Ajuda </a>
+            <a href="/sobre" class="itemMenu"> Sobre </a>
+            <a href="/sair" class="itemMenu"> Sair </a>
+        </nav>
+    </header>
+
+    <br></br>
+    
+    
+    <main>
+ 
+        <div class="retanguloroxo">
+    <h1 class="textCadastro">Cadastro</h1>
+
+    <h2 class="paraUtilizar">Para utilizar o nosso site, antes faça seu cadastro.</h2>
+
+   
+
+    <h4 class="jaTem"> Já tem uma conta?</h4> <a href="/login" class="facaLogin">Faça login.</a>
+
+    <form method="POST" action="/cadastro">
+
+
+        <label for="Nome" class="nome">Nome Completo</label>
+        <input type="text" id="Nome" name="Nome" class="formprimeironome" required>
+       
+       <label for="Endereço de Email" class="endEmail">E-mail</label>
+        <input type="email" id="Endereço de Email" name="Email" class="formendemail" required>
+
+         <label for="Telefone" class="tel">Telefone</label>
+        <input type="tel" id="Telefone" name="Telefone" class="formtelefone" required>
+
+        <label for="data de nascimento" class="dataNasc">Data de Nascimento</label>
+        <input type="date" id="data de nascimento" name="nascimento" class="formdatanascimento" required>
+       
+        <label for="Senha" class="senha">Senha</label>
+        <input type="password" id="Senha" name="Senha" class="formsenha" required>
+
+        <label for="Confirmar Senha" class="confSenha">Confirmar</label>
+        <input type="password" id="Confirmar Senha" name="CSenha" class="formconfirmsenha" required>
+
+        <label for="Bairro" class="Bairro">Bairro</label>
+        <input type="bairro" id="bairro" name="bairro" class="formbairro" required> 
+       
+        <div class="cidade">
+            
+            <input type="text" id="Cidade" name="Cidade" class="formcidade" required>
+            <label for="Cidade">Cidade</label>
+                      
+            </div>
+
+                <label for="TipoDePErfil" class="seuPerfil">Seu perfil é</label>
+                <select name="seuPerfil" class="formoferecimentoservico">  
+                    <% result.forEach(function(tipo) { %>  
+                            <option value=<%= tipo.id_tipo_usuario %> >
+                        <%= tipo.tipo %></option>
+                        <% })%>
+
+     
+                </select>
+
+
+                <label for="user_name" class="nomeperf">Nome de Usuario</label>
+        <input type="text" id="Nome" name="user_name" class="user_name" required placeholder="@SeuUsuario">
+
+                <input type="checkbox" name="lembreDeMim" id="lembreDeMim" class="lembrecheckbox">
+                <label for="LembreDeMim" class="lembreDeMim">Lembrar de Mim</label>
+
+                <img src="img/cadeado.svg" class="Cadeadoimg"/>
+                <button type="submit" class="btnCadastrar">Cadastrar</button>   
+                
+
+       </form>
+
+    </main>
+    <br></br>
+    
+    <footer>
+        <address>
+     <div class="footeratendcliente">
+         <h3> <b>ATENDIMENTO AO <br>CLIENTE</b></h3>
+         <h3 class="faleconosco">Fale Conosco</h3>
+     </div>
+     
+         <div class="Footersobrespreadfree">
+         <h3 class="sobrespread"><b>SOBRE A SPREADFREE</b></h3>
+         <h3>Sobre-nós</h3>
+         <h3 clas="politicadprivacidade">Políticas de privacidade</h3>
+     </div>
+     
+     <div class="footersiganos">
+         <h3 class="Siga"> <b>SIGA-NOS</b></h3>
+         <img src="img/instagram.png" alt="" class="instaLogo"> <h3 class="insta">Instagram</h3>
+         <img src="img/twitterimg.svg" alt="" class="twitterLogo"> <h3 class="twitter">Twitter</h3>
+     </div>
+     
+     <div class="footercontato">
+         <h3 class="contat"> <b>CONTATO</b></h3>
+         <img src="img/arrobaIcon.svg" alt="" class="arroba"> <h3 class="emailOficial">spreadfree@gmail.com</h3>
+     </div>
+     
+        <div class="footerMarcaRegistrada">
+        <h4 class="pt-br">Português (Brasil)</h4>
+         <img src="img/marcaregistrada.svg" alt="" class="cFooter">
+         <h3 class="footerSF">SpreadFree 2022</h3>
+    </div>
+    </address>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script src="js/banco.js"></script>
+
+<script>
+
+// $("#Telefone").mask("(99) 99999-99999")
+
+// $("#data de nascimento").mask("99/99/9999")
+
+</script>
+
+</body>
+</html>

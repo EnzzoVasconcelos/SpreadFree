@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpreadFree - Página Inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="/"><img src="img/Logotipo.png" alt="logo do site" class="logoHome"></a>
+
+        <button class="hamburguer">
+            <div class="bar">
+            </div>
+        </button>
+
+        <nav class="mobile-nav">
+
+            <a href="/perfilusu"><img src="img/icon_user_u27.svg" alt="foto de usuario"></a>
+            <h4>Entre ou cadastre sua conta</h4>
+            <a href="/login" class="entrar">Entrar</a>
+            <a href="/cadastro" class="cadastrar">Cadastrar</a>
+            <a href="/" class="itemMenu"> Início </a>
+            <a href="/premium" class="itemMenu"> Premium </a>
+            <a href="/Comunidade" class="itemMenu"> Comunidade </a>
+            <a href="/discovery" class="itemMenu"> Descobrir </a>
+            <a href="/ajuda" class="itemMenu"> Ajuda </a>
+            <a href="/sobre" class="itemMenu"> Sobre </a>
+            <a href="/sair" class="itemMenu"> Sair </a>
+        </nav>
+    </header>
+
+    <main class="mainHome">
+        <img src="img/homeimagem.jpg" class="imgHome" >
+
+        <form id="frmpesquisa" action="/pesquisa" method="post" class="frm">
+            <img src="img/lupa.svg" alt="" class="lupa" onclick="document.getElementById('frmpesquisa').submit()">
+            <input type="text" id="search" placeholder="Buscar usuário por tag" class="barraPesquisa" name="pesquisa">
+        </form>
+
+        <div class="pessoa">
+            <% if(tarefas){ tarefas.forEach(function(tarefa){%>
+                <a href="/pesquisa?idusuario=<%= tarefa.id_usuario %>">
+                    <div >
+                        <%= tarefa.user_name %>
+                    </div>
+                </a>
+                <% }) }%>
+        </div>
+
+        <div class="horizontal-scroll-wrapper squares">
+            <div>
+                <a href="/pedreiro">
+                    <img src="img/pedreiro_u64.svg" alt="" class="pedreiro"> </a>
+                <h3 class="pedreiroText">Pedreiro</h3>
+            </div>
+
+            <div>
+                <a href="/confeiteiro">
+                    <img src="img/confeiteiro_u66.svg" alt="" class="confeiteiro"></a>
+                <h3 class="confeiteiraText">Confeiteira</h3>
+            </div>
+
+            <div>
+                <a href="/empregada">
+                    <img src="img/empregada_u68.svg" alt="" class="empregada"></a>
+                <h3 class="empregadaText">Empregada</h3>
+            </div>
+
+            <div>
+                <a href="/programadorweb">
+                    <img src="img/ProgramadorWEB.svg" alt="" class="programadorWeb"></a>
+                <h3 class="programadorWebText">Programador</h3>
+            </div>
+
+            <div>
+                <a href="/professorparticular">
+                    <img src="img/ProfParti.svg" alt="" class="profPart"></a>
+                <h3 class="profPartText">Professor Partícular</h3>
+            </div>
+
+
+            <div>
+                <a href="/editordevideo">
+                    <img src="img/EditorVD.svg" alt="" class="editorVD"></a>
+                <h3 class="EditorVDText">Editor de Vídeo</h3>
+            </div>
+
+        </div>
+
+
+        <h2 class="destaqueDia"> Destaques do dia</h2>
+
+        <a href="/perfilRaphaela"><img class="mySlides" src="img/Rafaela.PNG"></a>
+        <a href="/perfilRenato"><img class="mySlides" src="img/Renato.PNG"></a>
+        <a href="/perfilFernanda"> <img class="mySlides" src="img/Fernanda.PNG"></a>
+
+
+        <button class="w3-button-w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button-w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+
+
+        <div class="fundoroxo">
+            <h2 class="premium"> Por que ser Premium?</h2>
+            <p class="pqPremiumText">Com o nosso Premium você consegue usufruir de 100% do potencial do nosso site!
+                Confira alguns dos nossos benefícios logo abaixo.</p>
+
+            <div class="planoPremium">
+                <h3 class="premiumTitle">Premium</h3>
+                <h4 class="planSem">Plano semanal <br> R$ 07,00/sem</h4>
+                <ul class="contentPlan">
+                    <li> <img src="img/correto.svg"> Destaques nas áreas de pesquisa do site</li>
+                    <li> <img src="img/correto.svg"> Boost de alcance na aba comunidade</li>
+                    <li> <img src="img/correto.svg"> Prioridade na fila de espera do suporte</li>
+                </ul>
+                <a href="/premium"><button class="btnAssinar">Assinar</button></a>
+            </div>
+
+            <div class="planoPremium1">
+                <h3 class="premiumTitle1">Premium</h3>
+                <h4 class="planSem1">Plano semanal <br> R$ 07,00/sem</h4>
+                <ul class="contentPlan1">
+                    <li> <img src="img/correto.svg"> Destaques nas áreas de pesquisa do site</li>
+                    <li> <img src="img/correto.svg"> Boost de alcance na aba comunidade</li>
+                    <li> <img src="img/correto.svg"> Prioridade na fila de espera do suporte</li>
+                </ul>
+                <button class="btnAssinar1">Assinar</button>
+            </div>
+
+            <div class="planoPremium2">
+                <h3 class="premiumTitle2">Premium</h3>
+                <h4 class="planSem2">Plano semanal <br> R$ 07,00/sem</h4>
+                <ul class="contentPlan2">
+                    <li> <img src="img/correto.svg"> Destaques nas áreas de pesquisa do site</li>
+                    <li> <img src="img/correto.svg"> Boost de alcance na aba comunidade</li>
+                    <li> <img src="img/correto.svg"> Prioridade na fila de espera do suporte</li>
+                </ul>
+                <button class="btnAssinar2">Assinar</button>
+            </div>
+        </div>
+
+
+        <h2 class="comunidade"> Comunidade</h2>
+        <p class="comunidadeParag"> Nós da SpreadFree também temos uma
+            comunidade em constante crescimento e cheia
+            de usuários prontos para atender qualquer uma
+            das suas necessidades!</p>
+
+        <img src="img/figpessoas.png" class="pessoas">
+
+        <button class="comAqui">Comece por aqui</button>
+        <a href="/Comunidade"><img src="img/sinalmais.svg" class="sinalMais"></a>
+    </main>
+    <footer>
+        <img src="img/graficofrente.svg" alt="" class="graficoFrente">
+        <img src="img/graficotras.svg" alt="" class="graficoTras">
+        <address>
+            <div class="footeratendcliente">
+                <h3> <b>ATENDIMENTO AO <br>CLIENTE</b></h3>
+                <h3 class="faleconosco">Fale Conosco</h3>
+            </div>
+
+            <div class="Footersobrespreadfree">
+                <h3 class="sobrespread"><b>SOBRE A SPREADFREE</b></h3>
+                <h3>Sobre-nós</h3>
+                <h3 clas="politicadprivacidade">Políticas de privacidade</h3>
+            </div>
+
+            <div class="footersiganos">
+                <h3 class="Siga"> <b>SIGA-NOS</b></h3>
+                <img src="img/instagram.png" alt="" class="instaLogo">
+                <h3 class="insta">Instagram</h3>
+                <img src="img/twitterimg.svg" alt="" class="twitterLogo">
+                <h3 class="twitter">Twitter</h3>
+            </div>
+
+            <div class="footercontato">
+                <h3 class="contat"> <b>CONTATO</b></h3>
+                <img src="img/arrobaIcon.svg" alt="" class="arroba">
+                <h3 class="emailOficial">spreadfree@gmail.com</h3>
+            </div>
+
+            <div class="footerMarcaRegistrada">
+                <h4 class="pt-br">Português (Brasil)</h4>
+                <img src="img/marcaregistrada.svg" alt="" class="cFooter">
+                <h3 class="footerSF">SpreadFree 2022</h3>
+            </div>
+
+        </address>
+        </address>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/UsuarioDAL.js"></script>
+
+</body>
+
+</html>

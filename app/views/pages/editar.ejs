@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="/"><img src="img/Logotipo.png" alt="logo do site" class="logoHome"></a>  
+                
+        <button class="hamburguer">
+            <div class="bar">
+            </div>
+        </button>
+        
+        <nav class="mobile-nav">
+            
+            <a href="/perfil"><img src="img/icon_user_u27.svg" alt="foto de usuario"></a>
+            <h4>Entre ou cadastre sua conta</h4>
+            <a href="/login" class="entrar">Entrar</a>
+            <a href="/cadastro" class="cadastrar">Cadastrar</a>
+            <a href="/" class="itemMenu"> Início </a>
+            <a href="/premium" class="itemMenu"> Premium </a>
+            <a href="/Comunidade" class="itemMenu"> Comunidade </a>
+            <a href="/discovery" class="itemMenu"> Descobrir </a>
+            <a href="/ajuda" class="itemMenu"> Ajuda </a>
+            <a href="/sobre" class="itemMenu"> Sobre </a>
+            <a href="/sair" class="itemMenu"> Sair </a>
+        </nav>
+    </header>
+
+    <main>
+ 
+        <div class="retanguloroxo">
+    <h4 class="jaTem"> Editar perfil</h4>
+    <%
+
+ 
+
+    <!-- let arquivo = {"imagem":"image/img-perfil.png"} -->
+
+   let arquivo = {"imagem":"image/usuario-white.png"}
+
+
+
+   if(valores.img_perfil != null){
+
+       arquivo.imagem = valores.img_perfil
+
+   }
+
+
+
+   let msgErro = {"Nome":"", "Email":"",user_name:"", Telefone:""}
+
+   let avisoErro = {"Nome":"", "Email":"",user_name:"", Telefone:""}
+
+   if(listaErros){
+
+       listaErros.errors.forEach(function(itemErro){
+
+           if(itemErro.path == "Nome"){
+
+               avisoErro.Nome = "erro";
+
+               msgErro.Nome += " "+itemErro.msg
+
+               %>
+
+               <script>
+
+                   notify("Erro no preenchimento","Verifique o campo nome <br><%= itemErro.msg%>", "error", "center")                        
+
+               </script>
+
+               <%
+
+           }
+
+           if(itemErro.path == "Telefone"){
+
+               avisoErro.Telefone = "erro";
+
+               msgErro.Telefone = itemErro.msg
+
+               %>
+
+               <script>
+
+                   notify("Erro no preenchimento","Verifique o campo Telefone", "error", "center")                        
+
+               </script>
+
+               <%
+
+           }
+
+           if(itemErro.path == "user_name"){
+
+               avisoErro.user_name = "erro";
+
+               msgErro.user_name = itemErro.msg
+
+               %>
+
+               <script>
+
+                   notify("Erro no preenchimento","Verifique o campo nome de usuário", "error", "center")                        
+
+               </script>
+
+               <%
+
+           }
+
+           if(itemErro.path == "Email"){
+
+               avisoErro.Email = "erro";
+
+               msgErro.Email = itemErro.msg
+
+               %>
+
+               <script>
+
+                   notify("Erro no preenchimento","Verifique o campo e-mail", "error", "center")                        
+
+               </script>
+
+               <%
+
+           }
+           if(itemErro.path == "Senha"){
+
+            avisoErro.Senha = "erro";
+
+            msgErro.Senha = itemErro.msg
+
+            %>
+
+            <script>
+
+                notify("Erro no preenchimento","Verifique o campo Telefone", "error", "center")                        
+
+            </script>
+
+            <%
+
+        }
+
+
+       })
+
+   }
+    <form method="POST" action="/editar">
+
+        <div>
+        <label for="Nome" class="nome">Nome Completo</label>
+        <input type="text" id="Nome" name="Nome" class="formprimeironome" required>
+        </div>
+
+        <div>
+       <label for="Endereço de Email" class="endEmail">E-mail</label>
+        <input type="email" id="Endereço de Email" name="Email" class="formendemail" required>
+        </div>
+
+        <div>
+        <label for="Telefone" class="tel">Telefone</label>
+        <input type="tel" id="Telefone" name="Telefone" class="formtelefone" required>
+        </div>
+
+        <div>
+        <label for="Senha" class="senha">Senha</label>
+        <input type="password" id="Senha" name="Senha" class="formsenha" required>
+        </div>
+
+        <div>
+        <input type="text" id="Nome" name="user_name" class="user_name" required placeholder="@SeuUsuario">
+        <label for="user_name" class="nomeperf">Nome de Usuario</label>
+        </div>
+
+    </select>
+                <button type="submit" class="btnCadastrar">Editar</button>   
+                
+
+       </form>
+
+    </main>
+    <br></br>
+    
+    <footer>
+        <address>
+     <div class="footeratendcliente">
+         <h3> <b>ATENDIMENTO AO <br>CLIENTE</b></h3>
+         <h3 class="faleconosco">Fale Conosco</h3>
+     </div>
+     
+         <div class="Footersobrespreadfree">
+         <h3 class="sobrespread"><b>SOBRE A SPREADFREE</b></h3>
+         <h3>Sobre-nós</h3>
+         <h3 clas="politicadprivacidade">Políticas de privacidade</h3>
+     </div>
+     
+     <div class="footersiganos">
+         <h3 class="Siga"> <b>SIGA-NOS</b></h3>
+         <img src="img/instagram.png" alt="" class="instaLogo"> <h3 class="insta">Instagram</h3>
+         <img src="img/twitterimg.svg" alt="" class="twitterLogo"> <h3 class="twitter">Twitter</h3>
+     </div>
+     
+     <div class="footercontato">
+         <h3 class="contat"> <b>CONTATO</b></h3>
+         <img src="img/arrobaIcon.svg" alt="" class="arroba"> <h3 class="emailOficial">spreadfree@gmail.com</h3>
+     </div>
+     
+        <div class="footerMarcaRegistrada">
+        <h4 class="pt-br">Português (Brasil)</h4>
+         <img src="img/marcaregistrada.svg" alt="" class="cFooter">
+         <h3 class="footerSF">SpreadFree 2022</h3>
+    </div>
+    </address>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script src="js/banco.js"></script>
+
+<script>
+
+$("#Telefone").mask("(99) 99999-99999")
+
+$("#data de nascimento").mask("99/99/9999")
+
+$("#user_name").mask("@")
+
+</script>
+
+</body>
+</html>

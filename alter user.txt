@@ -1,0 +1,14 @@
+ALTER USER 'root'@'localhost' 
+IDENTIFIED 
+with 
+mysql_native_password 
+BY '@ITB123456';
+
+
+--------------------Coiso do Pesquisar---------------------------
+
+this.findByTag("nand").then((results)=>{
+            console.log(results)
+        })
+
+-----------------------------------------------------------------       
