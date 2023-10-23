@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
   password : 'TsDMbJywYic8THlHNkBW',
   database : 'Tables'
 });
- 
+
 connection.connect();
 return connection
 }
